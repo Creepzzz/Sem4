@@ -42,24 +42,15 @@ public class View {
 	public void sampleExecution() throws AddItemException, ItemCatalogException, OperationFailedException {
 		System.out.println("Cashier starts new sale.\n");
 		ctrl.startSale();
-		Sale out;
-		Sale right = null;
 		System.out.println("Cashier enter items. \n");
-		out = registerItem("4", new Amount(1));
-		if(false == checkNull(out))
-			right = out;
-		out = registerItem("", new Amount(1));
-		if(false == checkNull(out))
-			right = out;
-		out = registerItem("3", new Amount(1));
-		if(false == checkNull(out))
-			right = out;
-		out = registerItem("5", new Amount(1));
-		if(false == checkNull(out))
-			right = out;
+		registerItem("4", new Amount(1));
+		registerItem("", new Amount(1));
+		registerItem("3", new Amount(1));
+		registerItem("5", new Amount(1));
+
 		try{
 		System.out.println("Cashier displays the total with taxes. \n");
-			System.out.println(right.getTotal().getTotalPriceWithVAT().toString() + "kr \n");
+			System.out.println(ctrl.endSale() + "kr \n");
 		}catch (IllegalStateException exc){
 			handleException("Have to start new sale first.", exc);
 		}
@@ -73,11 +64,6 @@ public class View {
 			handleException("Have to start new sale first.", exc);
 		}
 	}
-	private boolean checkNull(Sale out){
-		if(out == null)
-			return true;
-		return false;
-	}
 
 	/**
 	 *
@@ -85,7 +71,7 @@ public class View {
 	 * @param amount
 	 * @return
 	 */
-	private Sale registerItem(String itemIdentifier, Amount amount) throws OperationFailedException {
+	private void registerItem(String itemIdentifier, Amount amount) throws OperationFailedException {
 		Sale out = null;
 		try {
 			out = ctrl.registerItem(itemIdentifier, amount);
@@ -99,7 +85,6 @@ public class View {
 		} catch (ItemCatalogException exc) {
 			handleException("Could not retrieve the item.", exc);
 		}
-		return out;
 	}
 
 	private void handleException(String message, Exception exception){

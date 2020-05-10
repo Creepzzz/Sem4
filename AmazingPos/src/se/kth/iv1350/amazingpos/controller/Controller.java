@@ -82,7 +82,9 @@ public class Controller {
 	public void addObserver(TotalRevenueObserver totalRevenueObserver){
 		totalRevenueObservers.add(totalRevenueObserver);
 	}
-
+	public String endSale(){
+		return sale.getTotal().getTotalPriceWithVAT().toString();
+	}
 	private void checkIfNewSaleStarted(String method) {
 		if (sale == null) {
 			throw new IllegalStateException("Call to " + method + " was made before initiating a new sale.");

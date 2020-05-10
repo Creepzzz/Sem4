@@ -42,13 +42,13 @@ public class LogHandler {
     }
 
     /**
-     * Creates instance of time for log
-     * @return   String with time
+     * Creates instance of time and date for log
+     * @return   String with time and date
      */
     private String createTime (){
         errorOccured = Calendar.getInstance().getTime();
         DateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
-        String error = dateFormat.format(errorOccured);
-        return error;
+        String errorTime = dateFormat.format(errorOccured);
+        return errorTime;
     }
 }
