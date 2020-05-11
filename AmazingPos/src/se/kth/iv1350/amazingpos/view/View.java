@@ -82,7 +82,7 @@ public class View {
 		}catch (IllegalStateException exc){
 			handleException("Have to start new sale.", exc);
 		} catch (AddItemException exc) {
-			handleException("Item identifier " + itemIdentifier +  " doesn't exist, please try again.", exc);
+			errorMessageHandler.showErrorMsg("Item identifier " + itemIdentifier +  " doesn't exist, please try again.");
 		}
 	}
 
