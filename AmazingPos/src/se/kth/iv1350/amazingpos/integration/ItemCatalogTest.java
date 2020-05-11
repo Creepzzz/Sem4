@@ -12,7 +12,6 @@ class ItemCatalogTest {
 	@Test
 	void testItemCatalog() {
 		String a = "1";
-        boolean expectedResult = true;
         ItemCatalog itemCatalog = new ItemCatalog();
         boolean result = itemCatalog.validItem(a);
         assertTrue(result);
@@ -20,7 +19,6 @@ class ItemCatalogTest {
 	@Test
 	public void testItemNotExists() throws AddItemException, ItemCatalogException {
 		String a = "6";
-        boolean expectedResult = false;
         ItemCatalog itemCatalog = new ItemCatalog();
         try {
             itemCatalog.getItem(a, new Amount(1));

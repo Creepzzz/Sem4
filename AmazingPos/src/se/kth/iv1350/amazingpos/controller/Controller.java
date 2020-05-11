@@ -50,7 +50,7 @@ public class Controller {
 	 * @param itemIdentifier    Specify the item
 	 * @param quantity          Specify the number of items
 	 */
-	public Sale registerItem(String itemIdentifier, Amount quantity) throws AddItemException, ItemCatalogException, OperationFailedException {
+	public Sale registerItem(String itemIdentifier, Amount quantity) throws AddItemException, OperationFailedException {
 		checkIfNewSaleStarted("registerItem");
 		try {
 			Item item = itemCatalog.getItem(itemIdentifier, quantity);

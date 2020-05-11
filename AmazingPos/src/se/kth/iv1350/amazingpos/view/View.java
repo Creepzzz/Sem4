@@ -44,7 +44,7 @@ public class View {
 		ctrl.startSale();
 		System.out.println("Cashier enter items. \n");
 		registerItem("4", new Amount(1));
-		registerItem("", new Amount(1));
+		registerItem("6", new Amount(1));
 		registerItem("3", new Amount(1));
 		registerItem("5", new Amount(1));
 
@@ -71,8 +71,8 @@ public class View {
 	 * @param amount
 	 * @return
 	 */
-	private void registerItem(String itemIdentifier, Amount amount) throws OperationFailedException {
-		Sale out = null;
+	private void registerItem(String itemIdentifier, Amount amount) {
+		Sale out;
 		try {
 			out = ctrl.registerItem(itemIdentifier, amount);
 			System.out.println(out.toString());
@@ -82,8 +82,6 @@ public class View {
 			handleException("Have to start new sale.", exc);
 		} catch (AddItemException exc) {
 			handleException("Item identifier " + itemIdentifier +  " doesn't exist, please try again.", exc);
-		} catch (ItemCatalogException exc) {
-			handleException("Could not retrieve the item.", exc);
 		}
 	}
 
