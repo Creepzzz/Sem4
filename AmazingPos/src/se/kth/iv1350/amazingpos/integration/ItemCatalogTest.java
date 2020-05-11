@@ -17,7 +17,7 @@ class ItemCatalogTest {
         assertTrue(result);
 	}
 	@Test
-	public void testItemNotExists() throws AddItemException, ItemCatalogException {
+	public void testItemNotExists() {
 		String a = "6";
         ItemCatalog itemCatalog = new ItemCatalog();
         try {

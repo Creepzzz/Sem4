@@ -9,7 +9,6 @@ public class Payment{
     private List<TotalRevenueObserver> totalRevenueObservers = new ArrayList<>();
     private Amount paidAmount;
     private Total total;
-    private Item item;
 
     /**
      * Creates a instance of payment

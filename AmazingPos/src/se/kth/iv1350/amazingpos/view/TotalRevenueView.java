@@ -18,7 +18,9 @@ public class TotalRevenueView implements TotalRevenueObserver{
     }
 
     private void printCurrentTotalRevenue(){
-        System.out.println("---------TOTAL REVENUE--------");
-        System.out.println("Amount: " +totalRevenue.getTotalPriceWithVAT().toString());
+        System.out.println("|¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨|");
+        System.out.println("|         TOTAL REVENUE        |");
+        System.out.println("|Amount: " +totalRevenue.getTotalPriceWithVAT().toString() + "                    |");
+        System.out.println("|______________________________|");
     }
 }

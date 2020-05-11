@@ -31,9 +31,19 @@ public class Sale {
 		startTime = dateFormat.format(time);
 
 	}
+
+	/**
+	 * Getter of start time
+	 * @return
+	 */
 	public String startTime(){
 		return startTime;
 	}
+
+	/**
+	 * Getter of end time
+	 * @return
+	 */
 	public String endTime(){
 
 		saleEnded = Calendar.getInstance().getTime();

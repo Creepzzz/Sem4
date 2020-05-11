@@ -39,7 +39,7 @@ public class View {
 	 *  Makes a sample execution of the application.
 	 *  AKA, simulating someone making inputs to the application.
 	 */
-	public void sampleExecution() throws AddItemException, ItemCatalogException, OperationFailedException {
+	public void sampleExecution() {
 		System.out.println("Cashier starts new sale.\n");
 		ctrl.startSale();
 		System.out.println("Cashier enter items. \n");

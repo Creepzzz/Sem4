@@ -24,7 +24,7 @@ public class ControllerTest {
     }
 
     @Test
-    public void registerItem() throws AddItemException, ItemCatalogException, OperationFailedException {
+    public void registerItem() {
         ctrl.startSale();
         String itemName = "Paprika";
         String itemID = "1";
@@ -49,7 +49,7 @@ public class ControllerTest {
     }
 
     @Test
-    public void registerNullItem() throws AddItemException, ItemCatalogException, OperationFailedException {
+    public void registerNullItem() {
 
         String itemName = "Kidneybönor";
         String itemID = "1";
@@ -76,7 +76,7 @@ public class ControllerTest {
     }
 
     @Test
-    public void registerEmptyIdItem() throws AddItemException, ItemCatalogException, OperationFailedException {
+    public void registerEmptyIdItem() {
         ctrl.startSale();
         String itemName = "Kidneybönor";
         String itemID = "";
@@ -100,8 +100,13 @@ public class ControllerTest {
 
         }
     }
+
+    /**
+     *
+     * @throws OperationFailedException
+     */
     @Test
-    public void registerUnkownItem() throws AddItemException, ItemCatalogException, OperationFailedException {
+    public void registerUnknownItem() throws OperationFailedException {
         ctrl.startSale();
         String itemName = "Kidneybönor";
         String itemID = "6";
@@ -123,7 +128,7 @@ public class ControllerTest {
         }
     }
     @Test
-    public void registerItemWithoutConnection() throws AddItemException, ItemCatalogException, OperationFailedException {
+    public void registerItemWithoutConnection() throws AddItemException {
         ctrl.startSale();
         String itemName = "Kidneybönor";
         String itemID = "5";

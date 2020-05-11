@@ -11,7 +11,7 @@ import java.util.Date;
 public class ErrorMessageHandler {
     private static final ErrorMessageHandler ERROR_MESSAGE_HANDLER = new ErrorMessageHandler();
     private final String NEW_LINE = "\n";
-    private Date errorOccured;
+    private Date errorOccurred;
 
     private ErrorMessageHandler(){}
 
@@ -42,9 +42,9 @@ public class ErrorMessageHandler {
     }
 
     private String getDateAndTimeOfError(){
-        errorOccured = Calendar.getInstance().getTime();
+        errorOccurred = Calendar.getInstance().getTime();
         DateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
-        String error = dateFormat.format(errorOccured);
+        String error = dateFormat.format(errorOccurred);
         return error;
 
     }

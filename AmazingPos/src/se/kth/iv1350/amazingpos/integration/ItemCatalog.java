@@ -14,7 +14,6 @@ public class ItemCatalog {
      *  Creates a instance of a dummy item database.
      */
     ItemCatalog(){
-
         itemsInCatalog();
     }
 
@@ -25,7 +24,6 @@ public class ItemCatalog {
      * @return If item exists <code>true</code> else <code>false</code>
      */
     public boolean validItem(String itemIdentifier){
-
         return itemList.containsKey(itemIdentifier);
     }
 

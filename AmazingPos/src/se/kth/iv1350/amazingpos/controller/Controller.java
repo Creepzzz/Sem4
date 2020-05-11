@@ -25,7 +25,6 @@ public class Controller {
 	 * Starts a new sale. This method must be called first before the process of a sale.
 	 */
 	public void startSale() {
-
 		this.sale = new Sale();
 	}
   /**
@@ -42,13 +41,17 @@ public class Controller {
 		this.printer = printer;
 	}
 
+
+
 	/**
 	 * The validity of the item is checked
 	 * Gets item from the catalog and adds it to the sale
 	 * Updates the catalog
-	 *
-	 * @param itemIdentifier    Specify the item
-	 * @param quantity          Specify the number of items
+	 * @param itemIdentifier   Specify the item
+	 * @param quantity         Specify the number of items
+	 * @return                 The sale with items
+	 * @throws AddItemException          Thrown if item can't be found
+	 * @throws OperationFailedException  Thrown if item couldn't be retrieved in any other way
 	 */
 	public Sale registerItem(String itemIdentifier, Amount quantity) throws AddItemException, OperationFailedException {
 		checkIfNewSaleStarted("registerItem");
@@ -82,9 +85,15 @@ public class Controller {
 	public void addObserver(TotalRevenueObserver totalRevenueObserver){
 		totalRevenueObservers.add(totalRevenueObserver);
 	}
+
+	/**
+	 * Ends the sale
+	 * @return     The total price as a string
+	 */
 	public String endSale(){
 		return sale.getTotal().getTotalPriceWithVAT().toString();
 	}
+
 	private void checkIfNewSaleStarted(String method) {
 		if (sale == null) {
 			throw new IllegalStateException("Call to " + method + " was made before initiating a new sale.");
