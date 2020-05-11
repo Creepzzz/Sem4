@@ -20,7 +20,7 @@ public class TotalRevenueView implements TotalRevenueObserver{
     private void printCurrentTotalRevenue(){
         System.out.println("|¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨|");
         System.out.println("|         TOTAL REVENUE        |");
-        System.out.println("|Amount: " +totalRevenue.getTotalPriceWithVAT().toString() + "                    |");
+        System.out.println("|\t \t  Amount: " +totalRevenue.getTotalPriceWithVAT().toString() + "kr        |");
         System.out.println("|______________________________|");
     }
 }

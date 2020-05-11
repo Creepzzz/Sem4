@@ -47,6 +47,7 @@ public class View {
 		registerItem("6", new Amount(1));
 		registerItem("3", new Amount(1));
 		registerItem("5", new Amount(1));
+		registerItem("4", new Amount(1));
 
 		try{
 		System.out.println("Cashier displays the total with taxes. \n");
